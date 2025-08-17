@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Mess Feedback Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar visible">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h3>College Mess Portal</h3>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="menu.html" class="nav-link">Weekly Menu</a>
+                <a href="menu-pdf.html" class="nav-link">Menu PDF</a>
+                <a href="#feedback" class="nav-link">Feedback</a>
+                <a href="#complaints" class="nav-link">Complaints</a>
+                <a href="admin-login.html" class="nav-link">Admin</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">College Mess Feedback Portal</h1>
+            <p class="hero-subtitle">Your voice matters! Vote on menu items, share feedback, and help us improve your dining experience.</p>
+            <div class="hero-buttons">
+                <button class="cta-button" onclick="window.location.href='menu.html'">Explore Menu</button>
+                <button class="cta-button secondary" onclick="scrollToAbout()">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🗳️</div>
+                    <h3>Vote on Menu</h3>
+                    <p>Cast your vote for your favorite dishes across breakfast, lunch, snacks, and dinner options throughout the week.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Anonymous Feedback</h3>
+                    <p>Share your thoughts and suggestions about the food quality, service, and overall dining experience anonymously.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Create Menu</h3>
+                    <p>Suggest new dishes and menu items that you'd like to see in the mess. Your creativity can shape future menus!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>View Results</h3>
+                    <p>See real-time voting results and popular choices to understand what the community prefers most.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Anonymous Feedback Section -->
+    <section id="feedback" class="feedback-section">
+        <div class="container">
+            <h2 class="section-title">Anonymous Feedback</h2>
+            <div class="form-container">
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-group">
+                        <label for="feedbackType">Feedback Type</label>
+                        <select id="feedbackType" name="feedbackType" required>
+                            <option value="">Select feedback type</option>
+                            <option value="food-quality">Food Quality</option>
+                            <option value="service">Service</option>
+                            <option value="cleanliness">Cleanliness</option>
+                            <option value="menu-variety">Menu Variety</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackMessage">Your Feedback</label>
+                        <textarea id="feedbackMessage" name="feedbackMessage" rows="5" placeholder="Share your thoughts and suggestions..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Overall Rating</label>
+                        <div class="rating-stars">
+                            <span class="star" data-rating="1">★</span>
+                            <span class="star" data-rating="2">★</span>
+                            <span class="star" data-rating="3">★</span>
+                            <span class="star" data-rating="4">★</span>
+                            <span class="star" data-rating="5">★</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" value="">
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anonymous Complaint Section -->
+    <section id="complaints" class="complaint-section">
+        <div class="container">
+            <h2 class="section-title">Anonymous Complaints</h2>
+            <div class="form-container">
+                <form id="complaintForm" class="complaint-form">
+                    <div class="form-group">
+                        <label for="complaintCategory">Complaint Category</label>
+                        <select id="complaintCategory" name="complaintCategory" required>
+                            <option value="">Select complaint category</option>
+                            <option value="food-safety">Food Safety</option>
+                            <option value="hygiene">Hygiene Issues</option>
+                            <option value="staff-behavior">Staff Behavior</option>
+                            <option value="facility">Facility Issues</option>
+                            <option value="billing">Billing Issues</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintMessage">Describe Your Complaint</label>
+                        <textarea id="complaintMessage" name="complaintMessage" rows="5" placeholder="Please provide detailed information about your complaint..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">Urgency Level</label>
+                        <select id="urgency" name="urgency" required>
+                            <option value="">Select urgency level</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                            <option value="critical">Critical</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintPhotos">Upload Photos (Optional)</label>
+                        <input type="file" id="complaintPhotos" name="complaintPhotos" accept="image/*" multiple>
+                        <small class="form-help">You can upload up to 3 photos. Supported formats: JPG, PNG, GIF (Max 5MB each)</small>
+                        <div id="photoPreview" class="photo-preview"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Complaint</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Draw Your Own Menu Section -->
+    <section id="menu-suggestions" class="menu-suggestion-section">
+        <div class="container">
+            <h2 class="section-title">Draw Your Own Menu</h2>
+            <p class="section-subtitle">Suggest new dishes and menu items you'd like to see</p>
+            <div class="form-container">
+                <form id="menuSuggestionForm" class="menu-suggestion-form">
+                    <div class="form-group">
+                        <label for="dishName">Dish Name</label>
+                        <input type="text" id="dishName" name="dishName" placeholder="Enter dish name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mealType">Meal Type</label>
+                        <select id="mealType" name="mealType" required>
+                            <option value="">Select meal type</option>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="dinner">Dinner</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredients">Ingredients</label>
+                        <textarea id="ingredients" name="ingredients" rows="3" placeholder="List the main ingredients..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Describe the dish, cooking method, or any special notes..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Suggestion</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>College Mess Portal</h3>
+                    <p>Making dining better, one feedback at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu Voting</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                        <li><a href="#complaints">Complaints</a></li>
+                        <li><a href="#menu-suggestions">Menu Suggestions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#admin">Admin Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 College Mess Feedback Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

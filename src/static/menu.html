@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Menu - College Mess Feedback Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h3>College Mess Portal</h3>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link active">Weekly Menu</a>
+                <a href="menu-pdf.html" class="nav-link">Menu PDF</a>
+                <a href="index.html#feedback" class="nav-link">Feedback</a>
+                <a href="index.html#complaints" class="nav-link">Complaints</a>
+                <a href="admin-login.html" class="nav-link">Admin</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header Section -->
+    <section class="menu-header-section">
+        <div class="container">
+            <h1 class="page-title">Weekly Menu Voting</h1>
+            <p class="page-subtitle">Cast your vote for your favorite dishes throughout the week</p>
+        </div>
+    </section>
+
+    <!-- Weekly Menu Voting Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="menu-grid-container">
+                <div class="menu-grid">
+                    <div class="menu-header">
+                        <div class="day-header time-header">Time</div>
+                        <div class="day-header">Mon</div>
+                        <div class="day-header">Tue</div>
+                        <div class="day-header">Wed</div>
+                        <div class="day-header">Thu</div>
+                        <div class="day-header">Fri</div>
+                        <div class="day-header">Sat</div>
+                        <div class="day-header">Sun</div>
+                    </div>
+                    
+                    <!-- Breakfast Row -->
+                    <div class="meal-row">
+                        <div class="meal-label">Breakfast</div>
+                        <div class="meal-cell" onclick="openVoteModal('monday', 'breakfast')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('tuesday', 'breakfast')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('wednesday', 'breakfast')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('thursday', 'breakfast')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('friday', 'breakfast')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('saturday', 'breakfast')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('sunday', 'breakfast')">
+                            <span>Vote</span>
+                        </div>
+                    </div>
+
+                    <!-- Lunch Row -->
+                    <div class="meal-row">
+                        <div class="meal-label">Lunch</div>
+                        <div class="meal-cell" onclick="openVoteModal('monday', 'lunch')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('tuesday', 'lunch')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('wednesday', 'lunch')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('thursday', 'lunch')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('friday', 'lunch')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('saturday', 'lunch')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('sunday', 'lunch')">
+                            <span>Vote</span>
+                        </div>
+                    </div>
+
+                    <!-- Snacks Row -->
+                    <div class="meal-row">
+                        <div class="meal-label">Snacks</div>
+                        <div class="meal-cell" onclick="openVoteModal('monday', 'snacks')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('tuesday', 'snacks')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('wednesday', 'snacks')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('thursday', 'snacks')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('friday', 'snacks')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('saturday', 'snacks')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('sunday', 'snacks')">
+                            <span>Vote</span>
+                        </div>
+                    </div>
+
+                    <!-- Dinner Row -->
+                    <div class="meal-row">
+                        <div class="meal-label">Dinner</div>
+                        <div class="meal-cell" onclick="openVoteModal('monday', 'dinner')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('tuesday', 'dinner')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('wednesday', 'dinner')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('thursday', 'dinner')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('friday', 'dinner')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('saturday', 'dinner')">
+                            <span>Vote</span>
+                        </div>
+                        <div class="meal-cell" onclick="openVoteModal('sunday', 'dinner')">
+                            <span>Vote</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voting Instructions -->
+            <div class="voting-instructions">
+                <h3>How to Vote</h3>
+                <div class="instruction-cards">
+                    <div class="instruction-card">
+                        <div class="instruction-icon">👆</div>
+                        <p>Click on any meal cell to see available options</p>
+                    </div>
+                    <div class="instruction-card">
+                        <div class="instruction-icon">✅</div>
+                        <p>Select your preferred dish and submit your vote</p>
+                    </div>
+                    <div class="instruction-card">
+                        <div class="instruction-icon">🔒</div>
+                        <p>You can only vote once per meal per session</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vote Modal -->
+    <div id="voteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeVoteModal()">&times;</span>
+            <h3 id="modalTitle">Vote for Monday Breakfast</h3>
+            <div class="dish-options" id="dishOptions">
+                <!-- Dish options will be populated by JavaScript -->
+            </div>
+            <button class="vote-btn" id="voteBtn" onclick="submitVote()">Submit Vote</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>College Mess Portal</h3>
+                    <p>Making dining better, one feedback at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Weekly Menu</a></li>
+                        <li><a href="menu-pdf.html">Menu PDF</a></li>
+                        <li><a href="index.html#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#admin">Admin Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 College Mess Feedback Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

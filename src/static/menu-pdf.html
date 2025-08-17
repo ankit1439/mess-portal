@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Menu PDF - College Mess Feedback Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h3>College Mess Portal</h3>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Weekly Menu</a>
+                <a href="menu-pdf.html" class="nav-link active">Menu PDF</a>
+                <a href="index.html#feedback" class="nav-link">Feedback</a>
+                <a href="index.html#complaints" class="nav-link">Complaints</a>
+                <a href="admin-login.html" class="nav-link">Admin</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PDF Header Section -->
+    <section class="pdf-header-section">
+        <div class="container">
+            <h1 class="page-title">Weekly Menu PDF</h1>
+            <p class="page-subtitle">View and download the complete weekly menu schedule</p>
+        </div>
+    </section>
+
+    <!-- PDF Viewer Section -->
+    <section class="pdf-section">
+        <div class="container">
+            <div class="pdf-controls">
+                <button class="download-btn" onclick="downloadPDF()">
+                    <span class="download-icon">📥</span>
+                    Download PDF
+                </button>
+                <button class="print-btn" onclick="printPDF()">
+                    <span class="print-icon">🖨️</span>
+                    Print Menu
+                </button>
+            </div>
+
+            <!-- PDF Preview -->
+            <div class="pdf-preview">
+                <div id="pdfContent" class="pdf-placeholder">
+                    <div class="pdf-content">
+                        <h2>College Mess Weekly Menu</h2>
+                        <p class="week-info">Week of: January 15-21, 2024</p>
+                        
+                        <div class="menu-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                        <th>Sunday</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="meal-time">Breakfast<br><small>7:00 - 9:00 AM</small></td>
+                                        <td>Idli Sambar<br>Coconut Chutney</td>
+                                        <td>Poha<br>Green Chutney</td>
+                                        <td>Upma<br>Pickle</td>
+                                        <td>Bread Butter<br>Jam</td>
+                                        <td>Dosa<br>Sambar</td>
+                                        <td>Paratha<br>Curd</td>
+                                        <td>Puri Bhaji<br>Sweet</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="meal-time">Lunch<br><small>12:00 - 2:00 PM</small></td>
+                                        <td>Dal Rice<br>Vegetable Curry</td>
+                                        <td>Rajma Chawal<br>Salad</td>
+                                        <td>Chole Bhature<br>Pickle</td>
+                                        <td>Biryani<br>Raita</td>
+                                        <td>Sambar Rice<br>Fry</td>
+                                        <td>Pulao<br>Dal</td>
+                                        <td>Special Thali<br>Sweet</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="meal-time">Snacks<br><small>4:00 - 6:00 PM</small></td>
+                                        <td>Samosa<br>Tea</td>
+                                        <td>Pakora<br>Coffee</td>
+                                        <td>Sandwich<br>Juice</td>
+                                        <td>Biscuits<br>Tea</td>
+                                        <td>Vada Pav<br>Chutney</td>
+                                        <td>Dhokla<br>Tea</td>
+                                        <td>Cake<br>Milk</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="meal-time">Dinner<br><small>7:00 - 9:00 PM</small></td>
+                                        <td>Roti Sabzi<br>Dal</td>
+                                        <td>Fried Rice<br>Manchurian</td>
+                                        <td>Pasta<br>Garlic Bread</td>
+                                        <td>Soup<br>Bread</td>
+                                        <td>Noodles<br>Spring Roll</td>
+                                        <td>Pizza<br>Salad</td>
+                                        <td>Special Dinner<br>Dessert</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="menu-notes">
+                            <h3>Important Notes:</h3>
+                            <ul>
+                                <li>Menu items may vary based on availability</li>
+                                <li>Special dietary requirements can be accommodated</li>
+                                <li>Timings are strictly followed</li>
+                                <li>Feedback is always welcome</li>
+                            </ul>
+                        </div>
+
+                        <div class="contact-info">
+                            <p><strong>Mess Manager:</strong> Mr. Rajesh Kumar</p>
+                            <p><strong>Contact:</strong> +91 98765 43210</p>
+                            <p><strong>Email:</strong> mess@college.edu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Options -->
+            <div class="pdf-options">
+                <div class="option-card">
+                    <h3>📅 Previous Weeks</h3>
+                    <p>Access menu archives from previous weeks</p>
+                    <button class="option-btn">View Archive</button>
+                </div>
+                <div class="option-card">
+                    <h3>📧 Email Menu</h3>
+                    <p>Get the weekly menu delivered to your email</p>
+                    <button class="option-btn">Subscribe</button>
+                </div>
+                <div class="option-card">
+                    <h3>📱 Mobile App</h3>
+                    <p>Download our mobile app for easy access</p>
+                    <button class="option-btn">Download App</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>College Mess Portal</h3>
+                    <p>Making dining better, one feedback at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Weekly Menu</a></li>
+                        <li><a href="menu-pdf.html">Menu PDF</a></li>
+                        <li><a href="index.html#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#admin">Admin Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 College Mess Feedback Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load uploaded PDF if available
+        async function loadUploadedPdf() {
+            try {
+                const response = await fetch('/api/public/current-menu-pdf');
+                const result = await response.json();
+                
+                if (result.success && result.data.filename) {
+                    // Replace the placeholder content with PDF viewer
+                    const pdfContent = document.getElementById('pdfContent');
+                    pdfContent.innerHTML = `
+                        <div class="pdf-viewer">
+                            <h3>📄 Current Weekly Menu</h3>
+                            <p>Uploaded: ${new Date(result.data.upload_date).toLocaleDateString()}</p>
+                            <iframe src="/uploads/${result.data.filename}" width="100%" height="600px" style="border: none; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></iframe>
+                            <div class="pdf-actions">
+                                <a href="/uploads/${result.data.filename}" download class="download-btn">📥 Download PDF</a>
+                                <button onclick="window.print()" class="print-btn">🖨️ Print Menu</button>
+                            </div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.log('No uploaded PDF found, showing default menu');
+            }
+        }
+
+        // Load PDF when page loads
+        document.addEventListener('DOMContentLoaded', loadUploadedPdf);
+    </script>
+</body>
+</html>
+
