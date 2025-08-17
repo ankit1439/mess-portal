@@ -833,17 +833,32 @@ def update_complaint_status():
 
 
 # Excel export functionality
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment
-from openpyxl.utils.dataframe import dataframe_to_rows
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment
+    from openpyxl.utils.dataframe import dataframe_to_rows
+    import pandas as pd
+    EXCEL_AVAILABLE = True
+except ImportError:
+    EXCEL_AVAILABLE = False
+    print("Warning: Excel export functionality not available (openpyxl/pandas not installed)")
+
 from flask import send_file
 import io
-import pandas as pd
 
 @admin_bp.route('/export/excel', methods=['GET'])
 @require_admin_auth
 def export_to_excel():
     """Export data to Excel format"""
+    if not EXCEL_AVAILABLE:
+        return jsonify({
+            'success': False,
+            'error': {
+                'code': 'EXCEL_NOT_AVAILABLE',
+                'message': 'Excel export functionality is not available on this deployment'
+            }
+        }), 503
+    
     try:
         # Get query parameters
         export_type = request.args.get('type', 'all').lower()

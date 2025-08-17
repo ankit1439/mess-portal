@@ -13,7 +13,11 @@ app = Flask(__name__, static_folder="src/static", template_folder="src/static")
 app.config['SECRET_KEY'] = 'mess_portal_secret_key_2024_secure_random'
 
 # Database setup (Postgres from Railway)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+database_url = os.environ.get("DATABASE_URL")
+if database_url and database_url.startswith("postgres://"):
+    database_url = database_url.replace("postgres://", "postgresql://", 1)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = database_url or "sqlite:///app.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
     "pool_pre_ping": True,
@@ -34,18 +38,23 @@ app.register_blueprint(pdf_bp, url_prefix='/api')
 
 # Create tables + default admin on startup
 with app.app_context():
-    db.create_all()
-    admin_user = AdminUser.query.filter_by(username='admin').first()
-    if not admin_user:
-        admin_user = AdminUser(
-            username='admin',
-            password_hash=AdminUser.hash_password('admin123'),
-            email='admin@mess.portal',
-            is_active=True
-        )
-        db.session.add(admin_user)
-        db.session.commit()
-        print("✅ Default admin created: username='admin', password='admin123'")
+    try:
+        db.create_all()
+        admin_user = AdminUser.query.filter_by(username='admin').first()
+        if not admin_user:
+            admin_user = AdminUser(
+                username='admin',
+                password_hash=AdminUser.hash_password('admin123'),
+                email='admin@mess.portal',
+                is_active=True
+            )
+            db.session.add(admin_user)
+            db.session.commit()
+            print("✅ Default admin created: username='admin', password='admin123'")
+        print("✅ Database initialized successfully")
+    except Exception as e:
+        print(f"❌ Database initialization error: {e}")
+        # Continue without crashing the app
 
 # Serve frontend (index.html + static files)
 @app.route("/", defaults={"path": ""})
